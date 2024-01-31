@@ -9,7 +9,7 @@ let numbers = [40, 68, 14, 90, 49];
     Use forEach method to loop though all the elements in the 'numbers' array above, and divide each element (number) by 2. Print the result in console.
 */
 
-// CODE HERE
+const newNumbers = numbers.forEach(elem => console.log(elem / 2));
 
 
 ////////// PROBLEM 2 //////////
@@ -22,7 +22,8 @@ let numbers = [40, 68, 14, 90, 49];
     NOTE: make sure you save the code in a variable, then console.log the variable to see the new array.
 */
 
-// CODE HERE
+const numbersMap = numbers.map(elem => elem / 2);
+console.log(numbersMap);
 
 
 ////////// PROBLEM 3 //////////
@@ -49,7 +50,8 @@ let cities = [
     Make sure you save the code in a variable. Then, console.log the variable to see the new array.
 */
 
-// CODE HERE
+const citiesFiltered = cities.filter(cities => cities.endsWith(`i`));
+console.log(citiesFiltered);
 
 
 ////////// PROBLEM 4 //////////
@@ -85,7 +87,15 @@ let fruits = [
     Note: do a google search on how to find an element's index of an array in Javascript. There is a built-in Javascript method that would help you find an index of an element in an array.
 */
 
-// CODE HERE
+fruits.forEach((item) => {
+  if (item.color === "red") {
+    return console.log(`The fruit with index ${fruits.indexOf(item)}, is an apple.`);
+  } else if (item.color === "orange") {
+    return console.log(`The fruit with index ${fruits.indexOf(item)}, is an orange.`);
+  } else {
+    return console.log(`The fruit with index ${fruits.indexOf(item)}, is neither an orange or apple.`)
+  }
+});
 
 
 
@@ -99,7 +109,11 @@ let fruits = [
     The fruit with index 3 is an apple  
 */
 
-// COPY AND PASTE THE RESULT FROM YOUR CONSOLE (NODE CONSOLE IS YOUR TERMINAL) HERE (AS A MULTI LINES COMMENT)
+// The fruit with index 0, is neither an orange or apple.
+// The fruit with index 1, is an orange.
+// The fruit with index 2, is neither an orange or apple.
+// The fruit with index 3, is an apple.
+
 
 
 
@@ -144,8 +158,13 @@ let foods = [
     Count the total price of foods that have "rice" tag. Please type the result too.
 */
 
-// CODE HERE
+totalPriceFoodsWithRice = foods.filter((food) => {
+  return food.tags.includes("rice");
+}).reduce((a,food) => {
+  return a + food.price} , 0
+);
 
 
 // THE TOTAL
 
+36
